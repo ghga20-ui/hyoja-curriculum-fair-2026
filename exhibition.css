@@ -157,11 +157,12 @@ button {
 
 h1 {
   margin: 0;
-  max-width: 800px;
+  max-width: none;
   font-size: clamp(42px, 4.1vw, 53px);
   line-height: 1.08;
   font-weight: 950;
   word-break: keep-all;
+  white-space: nowrap;
 }
 
 .hero-title-school,
@@ -998,6 +999,7 @@ h1 {
 
   h1 {
     font-size: 40px;
+    white-space: normal;
   }
 
   .hero-title-school,
