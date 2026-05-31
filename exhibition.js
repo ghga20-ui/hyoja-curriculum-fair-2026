@@ -25,6 +25,8 @@
     physics: 'student-poster-images/physics.jpg',
     world_history: 'student-poster-images/world_history.jpg',
     chemistry: 'student-poster-images/chemistry.jpg',
+    geometry: 'student-poster-images/geometry.jpg',
+    understanding_education: 'student-poster-images/understanding_education.jpg',
     society_and_culture: 'student-poster-images/society_and_culture.jpg',
     economics: 'student-poster-images/economics.jpg',
     information_technology: 'student-poster-images/information_technology.jpg',
