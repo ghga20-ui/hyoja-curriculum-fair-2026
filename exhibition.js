@@ -14,7 +14,17 @@
     search: '',
   };
 
-  const videoMap = {};
+  const videoMap = {
+    earth_science: { type: 'youtube', src: 'https://www.youtube.com/embed/3kgV_v-UzrM' },
+    chemistry: { type: 'youtube', src: 'https://www.youtube.com/embed/Kwhsvl59mBE' },
+    humans_and_psychology: { type: 'youtube', src: 'https://www.youtube.com/embed/qtLy-b-9j-M' },
+    ethics_and_thought: { type: 'youtube', src: 'https://www.youtube.com/embed/bEDsa_jWdho' },
+    world_history: { type: 'youtube', src: 'https://www.youtube.com/embed/fzwfwpsCTls' },
+    geometry: { type: 'youtube', src: 'https://www.youtube.com/embed/8Aod7QTOGwk' },
+    global_citizenship_and_geography: { type: 'youtube', src: 'https://www.youtube.com/embed/NTLdLT6QuFk' },
+    economics: { type: 'youtube', src: 'https://www.youtube.com/embed/0_aBlJ_RJvA' },
+    chinese: { type: 'youtube', src: 'https://www.youtube.com/embed/2hXbvtxNp6g' },
+  };
 
   const studentPosterMap = {
     ethics_and_thought: 'student-poster-images/ethics_and_thought.jpg',
