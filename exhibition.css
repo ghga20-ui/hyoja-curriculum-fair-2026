@@ -164,6 +164,11 @@ h1 {
   word-break: keep-all;
 }
 
+.hero-title-school,
+.hero-title-event {
+  display: inline;
+}
+
 .hero-copy p {
   margin: 20px 0 0;
   max-width: 620px;
@@ -993,6 +998,11 @@ h1 {
 
   h1 {
     font-size: 40px;
+  }
+
+  .hero-title-school,
+  .hero-title-event {
+    display: block;
   }
 
   .hero-copy p {
