@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>효자고등학교 교육과정 박람회 · 선택과목 온라인 전시관</title>
+  <meta name="description" content="효자고등학교 2026학년도 교육과정 박람회 선택과목 온라인 전시관">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="exhibition.css">
+</head>
+<body>
+  <main class="site-shell">
+    <nav class="topbar page-wrap" aria-label="주요 메뉴">
+      <a class="brand" href="#top" aria-label="효자고등학교 선택과목 온라인 전시관 홈">
+        <img src="assets/school-logo.png" alt="효자고등학교 로고">
+        <span>
+          효자고등학교
+          <small>선택과목 온라인 전시관</small>
+        </span>
+      </a>
+      <div class="topbar-actions">
+        <a class="ghost-link" href="pdf-output/%EC%84%A0%ED%83%9D%EA%B3%BC%EB%AA%A9%ED%8F%AC%EC%8A%A4%ED%84%B0-%ED%86%B5%ED%95%A9.pdf" target="_blank" rel="noopener">전체 포스터 PDF</a>
+        <button class="ghost-link" type="button" data-scroll-target="subjects">과목 둘러보기</button>
+      </div>
+    </nav>
+
+    <section id="top" class="hero page-wrap">
+      <div class="hero-copy">
+        <div class="year-mark"><i aria-hidden="true"></i>2026학년도</div>
+        <h1>효자고등학교 교육과정 박람회</h1>
+        <p>관심 있는 분야를 검색하고, 영역별로 좁혀보고, 영상과 포스터를 함께 보며 나에게 맞는 과목을 찾아보세요.</p>
+        <form class="hero-search" role="search" aria-label="선택과목 검색">
+          <label class="sr-only" for="subject-search">과목명, 진로, 학과, 키워드 검색</label>
+          <input id="subject-search" type="search" placeholder="과목명, 진로, 학과, 키워드 검색" autocomplete="off">
+          <button type="submit">탐색 시작</button>
+        </form>
+      </div>
+
+      <div class="hero-wall" aria-hidden="true">
+        <article class="floating-poster poster-a">
+          <div class="mini-poster"><span></span><span></span><span></span><span></span></div>
+          <strong>인공지능 수학</strong>
+          <small>수학 · 진로선택</small>
+        </article>
+        <article class="floating-poster poster-b">
+          <div class="mini-poster"><span></span><span></span><span></span><span></span></div>
+          <strong>문학과 영상</strong>
+          <small>국어 · 진로선택</small>
+        </article>
+        <article class="floating-poster poster-c">
+          <div class="mini-poster"><span></span><span></span><span></span><span></span></div>
+          <strong>사회문제 탐구</strong>
+          <small>사회 · 진로선택</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="filter-bar" aria-label="과목 필터">
+      <div class="filter-inner page-wrap">
+        <div class="filter-count">
+          <strong><span id="result-count">77</span>개 과목</strong>
+          <span>영역과 조건으로 빠르게 좁혀보기</span>
+        </div>
+        <div class="audience-toggle" aria-label="대상 학년">
+          <button type="button" data-audience="grade1" aria-pressed="true">1학년</button>
+          <button type="button" data-audience="grade2" aria-pressed="false">2학년</button>
+        </div>
+        <div id="semester-chips" class="chip-row" role="listbox" aria-label="학기"></div>
+        <div class="filter-selects">
+          <label class="select-wrap">
+            <span class="sr-only">선택 유형</span>
+            <select id="category-filter">
+              <option value="all">일반/진로/융합</option>
+              <option value="일반선택">일반선택</option>
+              <option value="진로선택">진로선택</option>
+              <option value="융합선택">융합선택</option>
+            </select>
+          </label>
+          <label class="select-wrap">
+            <span class="sr-only">수능 연계</span>
+            <select id="suneung-filter">
+              <option value="all">수능 연계</option>
+              <option value="suneung">수능 출제</option>
+              <option value="non-suneung">수능 미출제</option>
+            </select>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <section id="subjects" class="catalog page-wrap">
+      <div class="catalog-head">
+        <div>
+          <h2>과목 둘러보기</h2>
+          <p>카드를 눌러 영상, 포스터, 관련 학과와 진로 정보를 한 번에 확인하세요.</p>
+        </div>
+      </div>
+      <div id="area-chips" class="area-filter-row" role="listbox" aria-label="교과 영역"></div>
+      <div id="subject-grid" class="semester-list" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <strong>조건에 맞는 과목이 없습니다.</strong>
+        <span>검색어를 줄이거나 필터를 바꿔보세요.</span>
+      </div>
+    </section>
+  </main>
+
+  <div id="subject-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" data-close-modal aria-label="상세 보기 닫기">×</button>
+      <div id="modal-content"></div>
+    </section>
+  </div>
+
+  <script src="subjects-data-77.js"></script>
+  <script type="module" src="exhibition.js"></script>
+</body>
+</html>
