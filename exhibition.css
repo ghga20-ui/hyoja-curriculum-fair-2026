@@ -99,6 +99,10 @@ button {
   font-weight: 850;
 }
 
+.brand-school {
+  display: block;
+}
+
 .topbar-actions {
   display: flex;
   gap: 8px;

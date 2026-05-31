@@ -16,6 +16,24 @@
 
   const videoMap = {};
 
+  const studentPosterMap = {
+    ethics_and_thought: 'student-poster-images/ethics_and_thought.jpg',
+    humans_and_psychology: 'student-poster-images/humans_and_psychology.jpg',
+    earth_science: 'student-poster-images/earth_science.jpg',
+    world_culture_and_english: 'student-poster-images/world_culture_and_english.jpg',
+    thematic_reading: 'student-poster-images/thematic_reading.jpg',
+    physics: 'student-poster-images/physics.jpg',
+    world_history: 'student-poster-images/world_history.jpg',
+    chemistry: 'student-poster-images/chemistry.jpg',
+    society_and_culture: 'student-poster-images/society_and_culture.jpg',
+    economics: 'student-poster-images/economics.jpg',
+    information_technology: 'student-poster-images/information_technology.jpg',
+    global_citizenship_and_geography: 'student-poster-images/global_citizenship_and_geography.jpg',
+    life_science: 'student-poster-images/life_science.jpg',
+    chinese: 'student-poster-images/chinese.jpg',
+    japanese: 'student-poster-images/japanese.jpg',
+  };
+
   const semesterLabels = {
     '2-1': '2학년 1학기',
     '2-2': '2학년 2학기',
@@ -75,6 +93,7 @@
   }
 
   function posterImagePath(subjectId) {
+    if (studentPosterMap[subjectId]) return studentPosterMap[subjectId];
     const subject = subjects[subjectId];
     const index = order.indexOf(subjectId);
     const no = String(index + 1).padStart(2, '0');
