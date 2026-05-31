@@ -74,6 +74,14 @@
     return `pdf-output/individual/${encodeURIComponent(filename)}`;
   }
 
+  function posterImagePath(subjectId) {
+    const subject = subjects[subjectId];
+    const index = order.indexOf(subjectId);
+    const no = String(index + 1).padStart(2, '0');
+    const filename = `${no}-${subject.area}-${subject.name}.jpg`;
+    return `poster-images/${encodeURIComponent(filename)}`;
+  }
+
   function targetSemesters() {
     return state.audience === 'grade1'
       ? ['2-1', '2-2', '3-1', '3-2']
@@ -97,25 +105,7 @@
   }
 
   function getSearchBlob(subject) {
-    return [
-      subject.name,
-      subject.nameEn,
-      subject.area,
-      subject.category,
-      subject.hook,
-      subject.description,
-      subject.assessment,
-      subject.credits,
-      ...(subject.keywords || []),
-      ...(subject.keyContents || []),
-      ...(subject.contentCategories || []),
-      ...(subject.keyIdeas || []),
-      ...(subject.learningActivities || []),
-      ...(subject.departments || []),
-      ...(subject.careers || []),
-      ...(subject.interestFields || []),
-      ...(subject.recommendedFor || []),
-    ].join(' ').toLowerCase();
+    return (subject.name || '').toLowerCase();
   }
 
   function passesFilters(subject) {
@@ -134,7 +124,7 @@
 
   function renderPosterThumb(subjectId, subject, interactive = false) {
     const label = `${subject.name} 포스터`;
-    const href = pdfPath(subjectId);
+    const imageHref = posterImagePath(subjectId);
     const fallback = `
       <div class="thumb-fallback" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
@@ -143,15 +133,15 @@
     `;
     if (interactive) {
       return `
-        <a class="poster-thumb poster-thumb-link" href="${href}" target="_blank" rel="noopener" aria-label="${escapeHtml(label)} PDF 열기">
-          <canvas data-pdf-thumb="${href}"></canvas>
+        <a class="poster-thumb poster-thumb-link is-rendered" href="${imageHref}" target="_blank" rel="noopener" aria-label="${escapeHtml(label)} 이미지 열기">
+          <img src="${imageHref}" alt="${escapeHtml(label)}">
           ${fallback}
         </a>
       `;
     }
     return `
-      <div class="poster-thumb" aria-label="${escapeHtml(label)} 썸네일">
-        <canvas data-pdf-thumb="${href}"></canvas>
+      <div class="poster-thumb is-rendered" aria-label="${escapeHtml(label)} 썸네일">
+        <img src="${imageHref}" alt="${escapeHtml(label)}">
         ${fallback}
       </div>
     `;
@@ -339,7 +329,7 @@
               <dt>수능</dt><dd>${subject.suneung ? '수능 출제 과목' : '수능 미출제 과목'}</dd>
             </dl>
             <div class="detail-actions">
-              <a class="primary-action" href="${pdfPath(subjectId)}" target="_blank" rel="noopener">포스터 PDF 열기</a>
+              <a class="primary-action" href="${posterImagePath(subjectId)}" target="_blank" rel="noopener">포스터 이미지 열기</a>
               <a href="pdf-output/%EC%84%A0%ED%83%9D%EA%B3%BC%EB%AA%A9%ED%8F%AC%EC%8A%A4%ED%84%B0-%ED%86%B5%ED%95%A9.pdf" target="_blank" rel="noopener">전체 PDF</a>
             </div>
           </div>
@@ -420,6 +410,8 @@
   }
 
   function queueThumbnailRendering(scope = document) {
+    const canvases = scope.querySelectorAll('canvas[data-pdf-thumb]');
+    if (!canvases.length) return;
     if (!pdfjsLib) {
       loadPdfRenderer();
       return;

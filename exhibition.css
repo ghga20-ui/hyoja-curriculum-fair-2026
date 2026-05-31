@@ -507,14 +507,16 @@ h1 {
   background: #f7fbfc;
 }
 
-.poster-thumb canvas {
+.poster-thumb canvas,
+.poster-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: none;
 }
 
-.poster-thumb.is-rendered canvas {
+.poster-thumb.is-rendered canvas,
+.poster-thumb.is-rendered img {
   display: block;
 }
 
