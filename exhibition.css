@@ -162,13 +162,12 @@ h1 {
   line-height: 1.08;
   font-weight: 950;
   word-break: keep-all;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .hero-title-school,
 .hero-title-event {
-  display: block;
-  white-space: nowrap;
+  display: inline;
 }
 
 .hero-copy p {
@@ -1075,6 +1074,13 @@ h1 {
 
   h1 {
     font-size: clamp(32px, 8.8vw, 40px);
+    white-space: normal;
+  }
+
+  .hero-title-school,
+  .hero-title-event {
+    display: block;
+    white-space: nowrap;
   }
 
   .hero-copy p {
