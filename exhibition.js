@@ -9,7 +9,6 @@
     audience: 'grade1',
     area: 'all',
     category: 'all',
-    suneung: 'all',
     semester: 'all',
     search: '',
   };
@@ -129,7 +128,6 @@
     chips: document.getElementById('area-chips'),
     semesterChips: document.getElementById('semester-chips'),
     category: document.getElementById('category-filter'),
-    suneung: document.getElementById('suneung-filter'),
     empty: document.getElementById('empty-state'),
     modal: document.getElementById('subject-modal'),
     modalContent: document.getElementById('modal-content'),
@@ -216,8 +214,6 @@
     }
     if (state.area !== 'all' && subject.area !== state.area) return false;
     if (state.category !== 'all' && subject.category !== state.category) return false;
-    if (state.suneung === 'suneung' && !subject.suneung) return false;
-    if (state.suneung === 'non-suneung' && subject.suneung) return false;
     if (state.search && !getSearchBlob(subject).includes(state.search.toLowerCase())) return false;
     return true;
   }
@@ -580,11 +576,6 @@
 
     els.category.addEventListener('change', () => {
       state.category = els.category.value;
-      renderGrid();
-    });
-
-    els.suneung.addEventListener('change', () => {
-      state.suneung = els.suneung.value;
       renderGrid();
     });
 
