@@ -207,6 +207,7 @@
   }
 
   function passesFilters(subject) {
+    if (state.audience === 'grade2' && subject.id === 'social_issues_exploration') return false;
     if (!subjectOfferingsInAudience(subject).length) return false;
     if (state.semester !== 'all') {
       const keys = subjectOfferingsInAudience(subject).map(offeringKey);
