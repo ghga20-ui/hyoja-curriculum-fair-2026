@@ -220,6 +220,20 @@ h1 {
 .hero-wall {
   position: relative;
   min-height: 410px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.hero-wall img {
+  display: block;
+  width: min(720px, 116%);
+  max-width: none;
+  height: auto;
+  margin-right: -34px;
+  object-fit: contain;
+  filter: drop-shadow(0 28px 58px rgba(17, 58, 72, .12));
 }
 
 .floating-poster {
@@ -915,6 +929,12 @@ h1 {
     overflow: hidden;
   }
 
+  .hero-wall img {
+    width: min(100%, 760px);
+    max-width: 100%;
+    margin-right: 0;
+  }
+
   .floating-poster {
     width: 180px;
     min-height: 220px;
@@ -1023,6 +1043,15 @@ h1 {
     height: 170px;
     min-height: 170px;
     margin-top: 14px;
+    border-radius: 16px;
+  }
+
+  .hero-wall img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% center;
+    filter: none;
   }
 
   .floating-poster {
