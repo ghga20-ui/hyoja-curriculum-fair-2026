@@ -190,9 +190,23 @@
     return `${offering.grade}-${offering.semester}`;
   }
 
+  function displayOfferings(subject) {
+    const offerings = subject.offerings || [];
+    if (state.audience !== 'grade2' || subject.id !== 'finance_and_economic_life') {
+      return offerings;
+    }
+    return offerings.map(offering => ({
+      ...offering,
+      semester: 1,
+      groupId: '2026_g3_s1_cross',
+      choose: 4,
+      totalCredits: 12,
+    }));
+  }
+
   function subjectOfferingsInAudience(subject) {
     const allowed = new Set(targetSemesters());
-    return (subject.offerings || []).filter(offering => allowed.has(offeringKey(offering)));
+    return displayOfferings(subject).filter(offering => allowed.has(offeringKey(offering)));
   }
 
   function formatOffering(offering) {
@@ -253,7 +267,7 @@
 
   function renderCard(subjectId, semesterKey) {
     const subject = subjects[subjectId];
-    const offering = (subject.offerings || []).find(item => offeringKey(item) === semesterKey) || subject.primaryOffering;
+    const offering = displayOfferings(subject).find(item => offeringKey(item) === semesterKey) || subject.primaryOffering;
     return `
       <article class="subject-card" data-subject-id="${escapeHtml(subjectId)}">
         <div>

@@ -1817,23 +1817,23 @@ window.SUBJECTS = {
       {
         "cohort": "2026",
         "grade": 3,
-        "semester": 1,
-        "groupId": "2026_g3_s1_cross",
+        "semester": 2,
+        "groupId": "2026_g3_s2_cross",
         "groupLabel": "교과(군) 간 선택",
-        "choose": 4,
+        "choose": 3,
         "creditsEach": 3,
-        "totalCredits": 12
+        "totalCredits": 9
       }
     ],
     "primaryOffering": {
       "cohort": "2026",
       "grade": 3,
-      "semester": 1,
-      "groupId": "2026_g3_s1_cross",
+      "semester": 2,
+      "groupId": "2026_g3_s2_cross",
       "groupLabel": "교과(군) 간 선택",
-      "choose": 4,
+      "choose": 3,
       "creditsEach": 3,
-      "totalCredits": 12
+      "totalCredits": 9
     },
     "credits": "3~5",
     "placeholderFilled": false
