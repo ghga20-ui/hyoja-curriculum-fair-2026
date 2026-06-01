@@ -704,6 +704,19 @@ h1 {
   font-size: 20px;
 }
 
+.site-footer {
+  margin-top: 56px;
+  padding: 24px 0 38px;
+  border-top: 1px solid var(--line);
+  color: #6a7e87;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
 .modal {
   position: fixed;
   inset: 0;
