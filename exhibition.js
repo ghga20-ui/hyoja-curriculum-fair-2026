@@ -17,13 +17,21 @@
   const videoMap = {
     earth_science: { type: 'youtube', src: 'https://www.youtube.com/embed/3kgV_v-UzrM' },
     chemistry: { type: 'youtube', src: 'https://www.youtube.com/embed/Kwhsvl59mBE' },
+    world_culture_and_english: { type: 'youtube', src: 'https://www.youtube.com/embed/ZgZLotD3xn4' },
+    thematic_reading: { type: 'youtube', src: 'https://www.youtube.com/embed/8Q1caHc7mFQ' },
     humans_and_psychology: { type: 'youtube', src: 'https://www.youtube.com/embed/qtLy-b-9j-M' },
     ethics_and_thought: { type: 'youtube', src: 'https://www.youtube.com/embed/bEDsa_jWdho' },
     world_history: { type: 'youtube', src: 'https://www.youtube.com/embed/fzwfwpsCTls' },
+    physics: { type: 'youtube', src: 'https://www.youtube.com/embed/DLCGl1_koZM' },
     geometry: { type: 'youtube', src: 'https://www.youtube.com/embed/8Aod7QTOGwk' },
+    society_and_culture: { type: 'youtube', src: 'https://www.youtube.com/embed/QQ6eCi1e-4s' },
+    understanding_education: { type: 'youtube', src: 'https://www.youtube.com/embed/ko9G_TIJ428' },
     global_citizenship_and_geography: { type: 'youtube', src: 'https://www.youtube.com/embed/NTLdLT6QuFk' },
     economics: { type: 'youtube', src: 'https://www.youtube.com/embed/0_aBlJ_RJvA' },
+    information_technology: { type: 'youtube', src: 'https://www.youtube.com/embed/1b9ng0mpv78' },
+    life_science: { type: 'youtube', src: 'https://www.youtube.com/embed/lz7aXRp6seA' },
     chinese: { type: 'youtube', src: 'https://www.youtube.com/embed/2hXbvtxNp6g' },
+    language_life_and_hanja: { type: 'youtube', src: 'https://www.youtube.com/embed/efn9r3EtigI' },
   };
 
   const studentPosterMap = {
@@ -44,6 +52,7 @@
     life_science: 'student-poster-images/life_science.jpg',
     chinese: 'student-poster-images/chinese.jpg',
     japanese: 'student-poster-images/japanese.jpg',
+    language_life_and_hanja: 'student-poster-images/language_life_and_hanja.png',
   };
 
   const semesterLabels = {
