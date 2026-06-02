@@ -18,7 +18,7 @@
     literature_and_media: { type: 'youtube', src: 'https://www.youtube.com/embed/nROB4jFf6OA' },
     language_life_exploration: { type: 'youtube', src: 'https://www.youtube.com/embed/0WKt3FqT7-4' },
     thematic_reading: { type: 'youtube', src: 'https://www.youtube.com/embed/8Q1caHc7mFQ' },
-    world_culture_and_english: { type: 'youtube', src: 'https://www.youtube.com/embed/ZgZLotD3xn4' },
+    world_culture_and_english: { type: 'youtube', src: 'https://www.youtube.com/embed/CALs8Gc1xcg' },
     advanced_english_reading_and_writing: { type: 'youtube', src: 'https://www.youtube.com/embed/87sXqs2CF8o' },
     english_literature_reading: { type: 'youtube', src: 'https://www.youtube.com/embed/zejx1WGIwzA' },
     economic_mathematics: { type: 'youtube', src: 'https://www.youtube.com/embed/9tOFOf1toZA' },
